@@ -5,6 +5,7 @@
  */
 package datosusuarioio;
 
+import java.io.*;
 /**
  *
  * @author diegordonez
@@ -15,6 +16,24 @@ public class DatosUsuarioIO {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Hola mundo");
-    
+        BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
+        
+        String nombre = "";
+        
+        System.out.println("¿Cuál es tu nombre? ");
+        
+        try {
+            nombre = teclado.readLine();    
+        } catch (IOException e) {
+            System.out.println("Ha habido un error en la recogida de texto!!");
+        }
+        System.out.println("¡Hola! "+nombre);
+    }
 }
+
+ 
+
+    
+    
+    
+    
