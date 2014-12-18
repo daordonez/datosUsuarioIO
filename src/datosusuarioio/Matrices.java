@@ -10,5 +10,22 @@ package datosusuarioio;
  * @author diegordonez
  */
 public class Matrices {
+    public static void main(String[] args) {
+    String  nombre;
     
+    nombre = "Pep";
+    
+    String diminutivo = nombre.concat("ito");
+    
+        System.out.println(diminutivo);
+        
+        String nombre2 = "Pepe";
+    
+        if (nombre.equals(nombre2)) {
+            System.out.println("Son iguales!");
+        } else {
+            System.out.println("Son diferentes!!");
+        }
+    
+    }
 }
