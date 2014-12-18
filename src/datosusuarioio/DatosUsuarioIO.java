@@ -28,7 +28,10 @@ public class DatosUsuarioIO {
             System.out.println("Ha habido un error en la recogida de texto!!");
         }
         System.out.println("¡Hola! "+nombre);
+        
+        
     }
+       
 }
 
  
