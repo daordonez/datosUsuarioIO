@@ -28,5 +28,4 @@ public class Vectores {
             System.out.println(precio);
         }
     }
-    
 }
