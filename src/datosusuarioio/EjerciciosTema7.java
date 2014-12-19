@@ -33,8 +33,8 @@ public class EjerciciosTema7 {
             //Recoger los valores que introduce el usuario e irlos depositando dentro del vector
             vector[i] = teclado.nextInt();
         }
-        //Muestra resultados
         
+        //Muestra resultados
         for( int elementos:vector){
             System.out.print(elementos+",");
         }
