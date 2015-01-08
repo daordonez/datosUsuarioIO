@@ -61,6 +61,20 @@ public class DiasDeLaSeman {
                 }
             }
         } while (salir == true);
+        
+        int vectorParam[] = {10,45,23,45,12};
+        /*
+            Lee este vector.
+        */
+        
+        forMejorado(vectorParam);
+        
     }
 
+    static void forMejorado(int vector[]){
+        
+        for(int valor:vector){
+            System.out.println(valor);
+        }
+    }
 }
