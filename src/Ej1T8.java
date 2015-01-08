@@ -17,20 +17,47 @@ public class Ej1T8 {
         //Ej2. Creación de matriz
         int nuevaMatriz[][] = {{10, 20, 30}, {5, 10, 15, 20}};
         
-        //Ej3. Comparación de vectores
+        muestraleyenda(1);
+        //Llamada a función y paso de vector como argumento
+        System.out.println("Imprime Vector");
+        lectorVectoresInt(nuevoVector);
+        
+        muestraleyenda(2);
+        //Llamada a lector de matriz
+        System.out.println("Imprime Matriz:");
+        lectorMatricesInt(nuevaMatriz);
+        
+        muestraleyenda(3);
+        //Ej3. Copia de vectores
+        int vecACop [] = {1,2,3,4,5};
+        int vecVacio [] = new int[4];
+        
+        muestraleyenda(4);
+        //Comprueba contenido de los vectores
+        System.out.println("Contenido vector a copiar");
+        for(int elmento:vecACop) {
+            System.out.println(elmento);
+        }
+        
+        System.out.println("Vector limpio: ");
+        for(int elemento:vecVacio) {
+            System.out.println(elemento);
+        }
+        
+        System.out.println("Ejecuta copia");
+        
+        copiaVec(vecACop, vecVacio);
+        
+        
+        //Ej4. Comparación de vectores
         //Vectores inicializacos para prueba
         int primerVec[] = {30,40,50,20};
         int segunVec[] = {35,45,50,55};
         int tercerVec[]= {30,40,50,20};
         
-        //Llamada a función y paso de vector como argumento
-        System.out.println("Imprime Vector");
-        lectorVectoresInt(nuevoVector);
         
-        //Llamada a lector de matriz
-        System.out.println("Imprime Matriz:");
-        lectorMatricesInt(nuevaMatriz);
         
+        muestraleyenda(4);
         //Comparador de vectores. Longitud,orden,valores en cada posición
         System.out.println("Compara vectores");
         
@@ -52,6 +79,18 @@ public class Ej1T8 {
 
     }
 
+    static void muestraleyenda(int numEj){
+        System.out.println("");
+        for (int i = 0; i < 10; i++) {
+            System.out.print("_");
+        }
+        System.out.println("");
+        System.out.println("Ejercicio "+numEj+".");
+        for (int i = 0; i < 10; i++) {
+            System.out.print("_");
+        }
+        System.out.println("");
+    }
     static void lectorVectoresInt(int vector[]) {
 
          //for "mejorado" para lectura de vector en función
@@ -60,7 +99,6 @@ public class Ej1T8 {
         }
         System.out.println("");
     }
-
     static void lectorMatricesInt(int matriz[][]) {
         for (int fil = 0; fil < matriz.length; fil++) {
             for (int col = 0; col < matriz[0].length; col++) {
@@ -69,7 +107,21 @@ public class Ej1T8 {
             }
         }
     }
-
+    static void copiaVec(int vOrigen[], int vDestino[]){
+        //Comprueba que tienen la misma longitud primero para poder copiar
+        
+        if (vOrigen.length == vDestino.length) {
+            for (int i = 0; i < vDestino.length; i++) {
+                vDestino[i] = vOrigen[i];    
+            }
+            //Muestra contenido
+            for(int elemento: vDestino) {
+            System.out.println(elemento);
+        }
+        }else {
+            System.out.println("Imposible realizar copia de valores, vectores con diferente longitud");
+        }
+    }
     static boolean comparadorVectores(int vector1[], int vector2[]) {
 
         /*
