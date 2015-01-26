@@ -32,7 +32,6 @@ public class Ej1T8 {
         int vecACop [] = {1,2,3,4,5};
         int vecVacio [] = new int[4];
         
-        muestraleyenda(4);
         //Comprueba contenido de los vectores
         System.out.println("Contenido vector a copiar");
         for(int elmento:vecACop) {
@@ -101,10 +100,8 @@ public class Ej1T8 {
     }
     static void lectorMatricesInt(int matriz[][]) {
         for (int fil = 0; fil < matriz.length; fil++) {
-            for (int col = 0; col < matriz[0].length; col++) {
-                int valorTmp = matriz[fil][col];
-                System.out.println("Fila: " + fil + " Columna: " + col + " Valor: " + valorTmp);
-            }
+            
+           lectorMatricesInt(matriz);
         }
     }
     static void copiaVec(int vOrigen[], int vDestino[]){
