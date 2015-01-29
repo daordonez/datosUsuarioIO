@@ -15,29 +15,32 @@ public class EjerciciosExamen {
     
     public static void main(String[] args) {
         
-        Scanner teclado = new Scanner(System.in);
+//        Scanner teclado = new Scanner(System.in);
+//        
+//        System.out.print("Introduce número para calcular factorial: ");
+//        int valor = teclado.nextInt();
+//        
+//        int result = factorial(valor);
+//        System.out.println("El factorial de "+valor+" es: "+result);
+//        
+//        System.out.println("Introduce posición de la secuencia de Fibo: ");
+//        int fibon = teclado.nextInt();
+//        
+//        int resSecfib = fibo(fibon);
+//        System.out.println("El valor de la posición: "+fibon+" es: "+resSecfib);
+//        
+//        System.out.println("Introduce prim num que deseas calcular: ");
+//        int bas = teclado.nextInt();
+//        
+//        System.out.println("Introduce seg  num que deseas calcular:");
+//        int exp = teclado.nextInt();
+//        
+//        int rBasExp = producto( bas, exp);
+//        
+//        System.out.println("El reusltado es: "+rBasExp);
         
-        System.out.print("Introduce número para calcular factorial: ");
-        int valor = teclado.nextInt();
+        System.out.println(palindromo("abccba"));
         
-        int result = factorial(valor);
-        System.out.println("El factorial de "+valor+" es: "+result);
-        
-        System.out.println("Introduce posición de la secuencia de Fibo: ");
-        int fibon = teclado.nextInt();
-        
-        int resSecfib = fibo(fibon);
-        System.out.println("El valor de la posición: "+fibon+" es: "+resSecfib);
-        
-        System.out.println("Introduce base del num que deseas calcular: ");
-        int bas = teclado.nextInt();
-        
-        System.out.println("Introduce exp del num que deseas calcular:");
-        int exp = teclado.nextInt();
-        
-        int rBasExp = producto( bas, exp);
-        
-        System.out.println("El reusltado es: "+rBasExp);
         
     }
     public static int factorial(int num){
@@ -67,16 +70,30 @@ public class EjerciciosExamen {
         return numFib;
     }
     
-    public static int producto(int bas, int exp){
+    public static int producto(int num1, int num2){
         int rslt = 0;
         
-        if(exp == 0){
+        if(num2 == 0){ //Caso base, multiplicaciónes por cero = 0
             rslt = 0;
         }else{
-            if(exp > 0){
-            rslt = bas + producto(bas, exp - 1);
+            if(num2 > 0){ // evitar bucle infinito al ir descontando en la resucurisivdad
+            rslt = num1 + producto(num1, num2 - 1);
             }
         }
         return rslt;
+    }
+    
+    public static boolean palindromo(String frase){
+        
+
+        if (frase.length() < 2) { // Caso base
+            return true;
+        }
+        if (frase.charAt(0) == frase.charAt(frase.length() - 1)) {
+            return  palindromo(frase.substring(1, frase.length() -1 ));
+        } else {    
+          return false;
+        }
+        
     }
 }
