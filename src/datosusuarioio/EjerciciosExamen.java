@@ -23,6 +23,12 @@ public class EjerciciosExamen {
         int result = factorial(valor);
         System.out.println("El factorial de "+valor+" es: "+result);
         
+        System.out.println("Introduce posición de la secuencia de Fibo: ");
+        int fibon = teclado.nextInt();
+        
+        int resSecfib = fibo(fibon);
+        System.out.println("El valor de la posición: "+fibon+" es: "+resSecfib);
+        
     }
     public static int factorial(int num){
         
@@ -37,5 +43,17 @@ public class EjerciciosExamen {
             }
         }
     return res;
+    }
+    
+    public static int fibo(int pos){
+        int numFib;
+        
+        if (pos == 1 || pos == 2) {
+            numFib = 1;
+        }else{
+            numFib = fibo(pos - 2) + fibo(pos - 1);
+        }
+   
+        return numFib;
     }
 }
