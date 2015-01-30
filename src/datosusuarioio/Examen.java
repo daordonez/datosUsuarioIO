@@ -56,12 +56,10 @@ public class Examen {
         
         try {
             for (int fil = 0; fil < cant; fil++) {
-                matriz[col][fil] = true;
+                matriz[fil][col] = true;
             }
         } catch (Exception e) {
-            for (boolean[] matriz1 : matriz) {
-                matriz1[col] = true;
-            }
+            
         }
     }
     
@@ -85,13 +83,13 @@ public class Examen {
         for (int col = 0; col < matriz[0].length; col++) {
             for (int fil = 0; fil < matriz.length; fil++) {
                 if (matriz[fil][col] == true) {
-                    System.out.printf("%s",car);
+                    System.out.printf(" %s ",car);
                 }
             }
             System.out.println(col);
         }
         for (int i = 0; i < vec.length; i++) {
-            System.out.print(vec[i]);
+            System.out.print(" "+vec[i]);
         }
         System.out.println("");
     }
